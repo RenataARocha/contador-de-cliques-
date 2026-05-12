@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Contador() {
-    const [contador, setContador] = useState(0);
+    const [contador, setContador] = useState(() => {
+        const contadorSalvo = localStorage.getItem("contador");
+
+        return contadorSalvo ? Number(contadorSalvo) : 0;
+    });
+
+    useEffect(() => {
+        localStorage.setItem("contador", String(contador));
+    }, [contador]);
 
     function handleIncrementar() {
         setContador((prev) => prev + 1);
