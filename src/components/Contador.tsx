@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "motion/react"
 
 function Contador() {
     const [contador, setContador] = useState(() => {
@@ -25,12 +26,18 @@ function Contador() {
 
     return (
         <div className="relative bg-gray-950 min-h-screen flex justify-center items-center overflow-hidden">
-            <div className="absolute top-[-120px] left-[-120px] w-80 h-80 bg-purple-700/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-[-120px] left-[-120px] w-80 h-80 bg-purple-700/25 rounded-full blur-3xl animate-floatGlow"></div>
 
-            <div className="absolute bottom-[-140px] right-[-120px] w-96 h-96 bg-blue-700/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-[-140px] right-[-120px] w-96 h-96 bg-blue-700/20 rounded-full blur-3xl animate-floatGlowSlow"></div>
 
             <main className="relative z-10 w-full px-4 flex justify-center">
-                <section className="bg-gray-950 backdrop-blur-xl w-full max-w-md h-90 rounded-xl px-8 py-16 flex flex-col items-center justify-center border border-gray-900 shadow-blue-950 shadow-xl gap-6">
+                <motion.section
+                    initial={{ opacity: 0, scale: 0.9, y: 40 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{
+                        duration: 0.8,
+                        ease: "easeOut"
+                    }} className="bg-gray-950 backdrop-blur-xl w-full max-w-md h-90 rounded-xl px-8 py-16 flex flex-col items-center justify-center border border-gray-900 shadow-blue-950 shadow-xl gap-6">
                     <header className="flex flex-col items-center gap-1">
                         <h1 className="text-stone-50 text-5xl font-light">CountFlow</h1>
 
@@ -39,12 +46,20 @@ function Contador() {
                         </p>
                     </header>
 
-                    <output
+                    <motion.output
+                        key={contador}
+                        initial={{ scale: 0.7, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{
+                            type: "spring",
+                            stiffness: 300,
+                            damping: 15
+                        }}
                         aria-live="polite"
                         className="text-stone-50 text-8xl font-extrabold tracking-tight my-10 drop-shadow-[0_0_10px_rgba(84,8,128,0.95)]"
                     >
                         {contador}
-                    </output>
+                    </motion.output>
 
                     <div
                         role="group"
@@ -140,7 +155,7 @@ function Contador() {
                             +
                         </button>
                     </div>
-                </section>
+                </motion.section>
             </main>
         </div>
 

@@ -9,3 +9,25 @@
 body {
   font-family: 'Inter', sans-serif;
 }
+
+@keyframes floatGlow {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+
+  50% {
+    transform: translateY(-25px) scale(1.08);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+.animate-floatGlow {
+  animation: floatGlow 8s ease-in-out infinite;
+}
+
+.animate-floatGlowSlow {
+  animation: floatGlow 12s ease-in-out infinite;
+}
