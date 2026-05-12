@@ -1,73 +1,144 @@
-# React + TypeScript + Vite
+# CountFlow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um contador de cliques moderno desenvolvido com React, Vite e Tailwind CSS.
 
-Currently, two official plugins are available:
+O projeto foi criado com foco em:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- interface moderna;
+- animações suaves;
+- acessibilidade;
+- responsividade;
+- boas práticas de semântica HTML.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Preview
 
-## Expanding the ESLint configuration
+O CountFlow possui:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- contador em tempo real;
+- animações de glow e efeitos de luz;
+- botões interativos com hover/focus;
+- layout responsivo;
+- acessibilidade para navegação por teclado;
+- design inspirado em interfaces modernas.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🚀 Tecnologias utilizadas
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
+- HTML5
+- CSS3
+
+---
+
+## 📂 Estrutura do projeto
+
+```bash
+src/
+ ├── components/
+ │    └── Contador.jsx
+ │
+ ├── App.jsx
+ ├── main.jsx
+ └── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Funcionalidades
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- ➕ Incrementar contador
+- ➖ Decrementar contador
+- 🔄 Resetar contador
+- 🌌 Background animado
+- ✨ Glow effects
+- ⌨️ Navegação acessível por teclado
+
+---
+
+## ♿ Acessibilidade
+
+O projeto inclui melhorias de acessibilidade como:
+
+- uso de tags semânticas (`main`, `section`, `header`, `output`);
+- `aria-label` nos botões;
+- `aria-live` para leitura dinâmica do contador;
+- foco visível com `focus-visible`;
+- contraste aprimorado;
+- suporte à navegação por teclado.
+
+---
+
+## 📱 Responsividade
+
+O layout foi desenvolvido para funcionar em:
+
+- desktop;
+- tablets;
+- dispositivos móveis.
+
+---
+
+## 🛠️ Como executar o projeto
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/countflow.git
 ```
+
+Entre na pasta:
+
+```bash
+cd countflow
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute o projeto:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🎨 Personalização
+
+Você pode facilmente alterar:
+
+- cores;
+- animações;
+- fontes;
+- efeitos glow;
+- tamanhos;
+- background;
+- favicon.
+
+---
+
+## 📌 Melhorias futuras
+
+- animação de números;
+- sons nos cliques;
+- contador persistente com LocalStorage;
+- modo claro/escuro;
+- histórico de cliques;
+- suporte a múltiplos temas.
+
+---
+
+## 👩‍💻 Desenvolvido por
+
+Renata Alexandre Rocha
+
+Front-End Developer
