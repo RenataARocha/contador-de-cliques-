@@ -1,6 +1,11 @@
 # CountFlow
 
-Um contador de cliques moderno desenvolvido com React, Vite e Tailwind CSS.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript)
+![Tailwind](https://img.shields.io/badge/Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite)
+
+Aplicação de contador interativo desenvolvida com React, TypeScript, Motion e Tailwind CSS, com foco em acessibilidade, microinterações e experiência do usuário.
 
 O projeto foi criado com foco em:
 
@@ -8,7 +13,20 @@ O projeto foi criado com foco em:
 - animações suaves;
 - acessibilidade;
 - responsividade;
+- microinterações;
 - boas práticas de semântica HTML.
+
+---
+
+## 🚀 Demo
+
+🔗 [Acessar projeto](https://contador-de-cliques-tan.vercel.app/)
+
+---
+
+## ☁️ Deploy
+
+O projeto foi publicado utilizando a plataforma Vercel.
 
 ---
 
@@ -27,12 +45,13 @@ O CountFlow possui:
 
 ## 🚀 Tecnologias utilizadas
 
-- React
-- Vite
-- Tailwind CSS
-- JavaScript
-- HTML5
-- CSS3
+- ⚛️ React
+- ⚡ Vite
+- 🎨 Tailwind CSS
+- 🎞️ Motion
+- 🔷 TypeScript
+- 🌐 HTML5
+- 🎯 CSS3
 
 ---
 
@@ -41,10 +60,10 @@ O CountFlow possui:
 ```bash
 src/
  ├── components/
- │    └── Contador.jsx
+ │    └── Contador.tsx
  │
- ├── App.jsx
- ├── main.jsx
+ ├── App.tsx
+ ├── main.tsx
  └── index.css
 ```
 
@@ -58,6 +77,9 @@ src/
 - 🌌 Background animado
 - ✨ Glow effects
 - ⌨️ Navegação acessível por teclado
+- 💾 Persistência de dados com LocalStorage
+- 🔊 Feedback sonoro nos botões
+- 🎞️ Animações com Motion
 
 ---
 
@@ -89,7 +111,7 @@ O layout foi desenvolvido para funcionar em:
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/countflow.git
+git clone https://github.com/RenataARocha/contador-de-cliques-.git
 ```
 
 Entre na pasta:
@@ -128,12 +150,26 @@ Você pode facilmente alterar:
 
 ## 📌 Melhorias futuras
 
-- animação de números;
-- sons nos cliques;
-- contador persistente com LocalStorage;
-- modo claro/escuro;
-- histórico de cliques;
-- suporte a múltiplos temas.
+- 🔊 Controle de som (mute/unmute)
+- 🌙 Tema claro/escuro
+- 📊 Histórico de cliques
+- 🎨 Sistema de múltiplos temas
+- 📈 Estatísticas de interação
+- ⚡ Atalhos de teclado
+
+---
+
+## 📚 Aprendizados
+
+Durante o desenvolvimento deste projeto foram praticados conceitos como:
+
+- gerenciamento de estado com React;
+- tipagem com TypeScript;
+- persistência de dados com LocalStorage;
+- acessibilidade com ARIA;
+- responsividade com Tailwind CSS;
+- animações com Motion;
+- microinterações e UX.
 
 ---
 
@@ -141,4 +177,4 @@ Você pode facilmente alterar:
 
 Renata Alexandre Rocha
 
-Front-End Developer
+Front-End Developer | React | TypeScript
