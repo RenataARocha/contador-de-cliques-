@@ -20,7 +20,9 @@ O projeto foi criado com foco em:
 
 ## 🚀 Demo
 
-🔗 [Acessar projeto](https://contador-de-cliques-tan.vercel.app/)
+https://github.com/user-attachments/assets/4372306a-5f6f-41d7-8686-2ac640f9076e
+
+
 
 ---
 
