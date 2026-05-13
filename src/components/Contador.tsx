@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 
 function Contador() {
     const [contador, setContador] = useState(() => {
@@ -12,36 +12,49 @@ function Contador() {
         localStorage.setItem("contador", String(contador));
     }, [contador]);
 
+    function playClickSound() {
+        const audio = new Audio("/click.wav");
+
+        audio.volume = 0.2;
+
+        audio.play();
+    }
+
     function handleIncrementar() {
+        playClickSound();
         setContador((prev) => prev + 1);
     }
 
     function handleDecrementar() {
+        playClickSound();
         setContador((prev) => prev - 1);
     }
 
     function handleReset() {
+        playClickSound();
         setContador(0);
     }
 
     return (
-        <div className="relative bg-gray-950 min-h-screen flex justify-center items-center overflow-hidden">
-            <div className="absolute top-[-120px] left-[-120px] w-80 h-80 bg-purple-700/25 rounded-full blur-3xl animate-floatGlow"></div>
+        <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-gray-950">
+            <div className="animate-floatGlow absolute top-[-120px] left-[-120px] h-80 w-80 rounded-full bg-purple-700/25 blur-3xl"></div>
 
-            <div className="absolute bottom-[-140px] right-[-120px] w-96 h-96 bg-blue-700/20 rounded-full blur-3xl animate-floatGlowSlow"></div>
+            <div className="animate-floatGlowSlow absolute right-[-120px] bottom-[-140px] h-96 w-96 rounded-full bg-blue-700/20 blur-3xl"></div>
 
-            <main className="relative z-10 w-full px-4 flex justify-center">
+            <main className="relative z-10 flex w-full justify-center px-4">
                 <motion.section
                     initial={{ opacity: 0, scale: 0.9, y: 40 }}
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{
                         duration: 0.8,
-                        ease: "easeOut"
-                    }} className="bg-gray-950 backdrop-blur-xl w-full max-w-md h-90 rounded-xl px-8 py-16 flex flex-col items-center justify-center border border-gray-900 shadow-blue-950 shadow-xl gap-6">
+                        ease: "easeOut",
+                    }}
+                    className="flex h-96 w-[90%] max-w-md flex-col items-center justify-center gap-6 rounded-xl border border-gray-900 bg-gray-950 px-8 py-16 shadow-xl shadow-blue-950 backdrop-blur-xl"
+                >
                     <header className="flex flex-col items-center gap-1">
-                        <h1 className="text-stone-50 text-5xl font-light">CountFlow</h1>
+                        <h1 className="text-5xl font-light text-stone-50">CountFlow</h1>
 
-                        <p className="text-stone-300 text-center">
+                        <p className="text-center text-stone-300">
                             Acompanhe cada clique em tempo real
                         </p>
                     </header>
@@ -53,10 +66,10 @@ function Contador() {
                         transition={{
                             type: "spring",
                             stiffness: 300,
-                            damping: 15
+                            damping: 15,
                         }}
                         aria-live="polite"
-                        className="text-stone-50 text-8xl font-extrabold tracking-tight my-10 drop-shadow-[0_0_10px_rgba(84,8,128,0.95)]"
+                        className="my-10 text-8xl font-extrabold tracking-tight text-stone-50 drop-shadow-[0_0_10px_rgba(84,8,128,0.95)]"
                     >
                         {contador}
                     </motion.output>
@@ -64,34 +77,12 @@ function Contador() {
                     <div
                         role="group"
                         aria-label="Controles do contador"
-                        className="flex gap-4 items-center"
+                        className="flex items-center gap-4"
                     >
                         <button
                             onClick={handleDecrementar}
                             aria-label="Decrementar contador"
-                            className="
-    text-stone-300
-    bg-gray-900
-    hover:bg-gray-800
-    rounded-full
-    w-14
-    h-14
-    border
-    border-olive-800
-    text-2xl
-    cursor-pointer
-    transition-all
-    duration-300
-
-    hover:scale-110
-    hover:shadow-[0_0_20px_rgba(163,163,163,0.35)]
-
-    active:scale-95
-
-    focus-visible:outline-none
-    focus-visible:ring-2
-    focus-visible:ring-stone-500
-    "
+                            className="flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border border-white/10 bg-white/5 text-2xl text-stone-200 backdrop-blur-md transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:outline-none active:scale-95"
                         >
                             -
                         </button>
@@ -99,29 +90,7 @@ function Contador() {
                         <button
                             onClick={handleReset}
                             aria-label="Resetar contador"
-                            className="
-    text-sky-50
-    px-8
-    w-24
-    h-10
-    border
-    border-olive-700
-    hover:bg-slate-900
-    rounded-full
-    cursor-pointer
-    font-medium
-    transition-all
-    duration-300
-
-    hover:scale-105
-    hover:shadow-[0_0_18px_rgba(120,120,120,0.25)]
-
-    active:scale-95
-
-    focus-visible:outline-none
-    focus-visible:ring-2
-    focus-visible:ring-slate-400
-    "
+                            className="h-10 w-24 cursor-pointer rounded-full border border-white/10 bg-white/5 px-6 font-medium text-stone-100 backdrop-blur-md transition-all duration-300 hover:scale-105 hover:bg-white/10 hover:shadow-[0_0_18px_rgba(255,255,255,0.12)] focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:outline-none active:scale-95"
                         >
                             Reset
                         </button>
@@ -129,28 +98,7 @@ function Contador() {
                         <button
                             onClick={handleIncrementar}
                             aria-label="Incrementar contador"
-                            className="
-    text-stone-300
-    bg-gray-950
-    rounded-full
-    w-14
-    h-14
-    text-2xl
-    cursor-pointer
-    transition-all
-    duration-300
-
-    drop-shadow-[0_0_10px_rgba(84,8,128,0.95)]
-
-    hover:scale-110
-    hover:shadow-[0_0_25px_rgba(168,85,247,1)]
-
-    active:scale-95
-
-    focus-visible:outline-none
-    focus-visible:ring-2
-    focus-visible:ring-purple-500
-    "
+                            className="h-14 w-14 cursor-pointer rounded-full bg-gray-950 text-2xl text-stone-300 drop-shadow-[0_0_10px_rgba(84,8,128,0.95)] transition-all duration-300 hover:scale-110 hover:shadow-[0_0_25px_rgba(168,85,247,1)] focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:outline-none active:scale-95"
                         >
                             +
                         </button>
@@ -158,7 +106,6 @@ function Contador() {
                 </motion.section>
             </main>
         </div>
-
     );
 }
 
